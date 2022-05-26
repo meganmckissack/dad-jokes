@@ -1,0 +1,35 @@
+body {
+  background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+  color: rgb(232, 109, 248);
+  text-shadow:
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+#dadJoke {
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  background-color: rgb(231, 89, 141);
+  border-color: rgb(230, 15, 94);
+  border-radius: 5px;
+}
+
+.showJoke {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}

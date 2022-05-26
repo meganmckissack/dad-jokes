@@ -1,28 +1,22 @@
-import $ from 'jquery';
+//import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import WeatherService from './weather-service.js';
+import getJoke from './dadJokeService.js';
 
-
-function clearFields() {
-  $('#location').val("");
-  $('.showErrors').text("");
-  $('.showHumidity').text("");
-  $('.showTemp').text("");
+// $(document).ready(function() {
+//   $('#dadJoke').click(function() {
+//     //async function(){
+//     const joke = getJoke();
+//     $('.showJoke').html(joke);
+//     //}
+//   });
+// });
+const jokeButton = document.querySelector('#dadJoke');
+const jokeText = document.querySelector('.showJoke');
+async function handleClick() {
+  const { joke } = await getJoke();
+  jokeText.textContent = joke;
 }
 
-$(document).ready(function() {
-  $('#weatherLocation').click(function() {
-    let city = $('#location').val();
-    clearFields();
-    let promise = WeatherService.getWeather(city);
-    promise.then(function(response) {
-      const body = JSON.parse(response);
-      $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
-      $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
-    }, function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error}`);
-    });
-  });
-});
+jokeButton.addEventListener('click', handleClick);

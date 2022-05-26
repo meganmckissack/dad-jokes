@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(), 
     new HtmlWebpackPlugin({
-      title: 'Shape Tracker',
+      title: 'Dad Jokes',
       template: './src/index.html',
       inject: 'body',
     }),
